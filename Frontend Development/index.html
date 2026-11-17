@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlogSphere – Share Your Ideas With The World</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+
+  <!-- ====== NAVBAR ====== -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <i class="fa-solid fa-blog"></i>
+        <span>BlogSphere</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="index.html#blogs" class="guest-only">Explore</a>
+        <a href="login.html" class="guest-only">Login</a>
+        <a href="register.html" class="btn-nav guest-only">Register</a>
+        <a href="dashboard.html" class="auth-only">Dashboard</a>
+        <a href="#" class="auth-only" onclick="handleLogout();return false;">Logout</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fa-solid fa-sparkles"></i> Welcome to BlogSphere</div>
+        <h1>Share Your Ideas<br><span class="gradient">With The World</span></h1>
+        <p>Discover insightful articles, share your stories, and connect with a vibrant community of writers and thinkers from around the globe.</p>
+        <div class="hero-buttons">
+          <a href="register.html" class="btn btn-primary btn-lg guest-only"><i class="fa-solid fa-rocket"></i> Get Started</a>
+          <a href="dashboard.html" class="btn btn-primary btn-lg auth-only"><i class="fa-solid fa-pen-to-square"></i> Write a Blog</a>
+          <a href="#blogs" class="btn btn-outline btn-lg"><i class="fa-regular fa-compass"></i> Explore Blogs</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-illustration">
+          <i class="fa-solid fa-feather-pointed"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SEARCH & FILTER ====== -->
+  <section class="search-filter-section" id="blogs">
+    <div class="container">
+      <div class="section-header">
+        <h2>Explore Articles</h2>
+        <p>Browse through our collection of insightful blog posts across various topics</p>
+      </div>
+      <div class="search-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search articles by title, author, or topic...">
+        <button id="searchBtn">Search</button>
+      </div>
+      <div class="category-filters">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="technology">Technology</button>
+        <button class="filter-btn" data-category="design">Design</button>
+        <button class="filter-btn" data-category="lifestyle">Lifestyle</button>
+        <button class="filter-btn" data-category="health">Health</button>
+        <button class="filter-btn" data-category="business">Business</button>
+        <button class="filter-btn" data-category="travel">Travel</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== BLOGS GRID ====== -->
+  <section class="blogs-section">
+    <div class="container">
+      <div class="blogs-grid" id="blogsGrid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <i class="fa-solid fa-blog"></i>
+            <span>BlogSphere</span>
+          </a>
+          <p>A modern blogging platform where ideas come to life. Share your stories, discover new perspectives, and connect with a global community.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#blogs">Explore</a></li>
+            <li><a href="register.html">Get Started</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="#">Technology</a></li>
+            <li><a href="#">Design</a></li>
+            <li><a href="#">Lifestyle</a></li>
+            <li><a href="#">Business</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 BlogSphere. Built with <i class="fa-solid fa-heart" style="color:#EF4444"></i> as part of Codomax Digital Solutions Internship.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Blog View Overlay -->
+  <div id="blogViewOverlay" class="blog-view-overlay"></div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/blogs.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

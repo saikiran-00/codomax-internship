@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Blog – BlogSphere</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="create-blog">
+
+  <!-- ====== NAVBAR ====== -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <i class="fa-solid fa-blog"></i>
+        <span>BlogSphere</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#blogs">Explore</a>
+        <a href="dashboard.html" class="auth-only">Dashboard</a>
+        <a href="create-blog.html" class="active btn-nav auth-only"><i class="fa-solid fa-plus"></i> New Blog</a>
+        <a href="#" class="auth-only" onclick="handleLogout();return false;">Logout</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ====== DASHBOARD LAYOUT ====== -->
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-user">
+          <div class="sidebar-avatar" id="sidebarAvatar">U</div>
+          <div class="sidebar-user-info">
+            <h4 id="sidebarName">User Name</h4>
+            <p id="sidebarEmail">user@example.com</p>
+          </div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html"><i class="fa-solid fa-chart-pie"></i> Overview</a>
+        <a href="create-blog.html" class="active"><i class="fa-solid fa-pen-to-square"></i> Create New Blog</a>
+        <a href="index.html"><i class="fa-solid fa-globe"></i> View Website</a>
+        <div class="nav-divider"></div>
+        <a href="#" onclick="handleLogout();return false;"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+      </nav>
+    </aside>
+
+    <!-- Mobile Sidebar Toggle -->
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main class="dashboard-main create-blog-section">
+      <div class="dashboard-topbar">
+        <div>
+          <div id="editIndicator" class="edit-indicator" style="display:none">
+            <i class="fa-solid fa-pen"></i> Editing existing blog post
+          </div>
+          <h1 id="formTitle">Create New Blog Post</h1>
+          <p class="welcome-text">Write, format, and publish your ideas for the world to see.</p>
+        </div>
+        <a href="dashboard.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
+      </div>
+
+      <div class="dashboard-section create-blog-form">
+        <form id="createBlogForm" novalidate>
+          <!-- Blog Title -->
+          <div class="form-group">
+            <label for="blogTitle">Blog Title *</label>
+            <div class="form-input-wrapper">
+              <input type="text" id="blogTitle" placeholder="e.g. 10 Essential Web Design Principles for 2026">
+            </div>
+            <p class="form-error"></p>
+          </div>
+
+          <!-- Category Selection -->
+          <div class="form-group">
+            <label for="blogCategory">Category *</label>
+            <div class="form-input-wrapper">
+              <select id="blogCategory">
+                <option value="" disabled selected>Select a category</option>
+                <option value="Technology">Technology</option>
+                <option value="Design">Design</option>
+                <option value="Lifestyle">Lifestyle</option>
+                <option value="Health">Health</option>
+                <option value="Business">Business</option>
+                <option value="Travel">Travel</option>
+              </select>
+            </div>
+            <p class="form-error"></p>
+          </div>
+
+          <!-- Featured Image URL -->
+          <div class="form-group">
+            <label for="blogImage">Featured Image URL (Optional)</label>
+            <div class="form-input-wrapper">
+              <input type="url" id="blogImage" placeholder="https://images.unsplash.com/photo-...">
+            </div>
+            <p class="form-error"></p>
+            <div class="image-preview" id="imagePreview"></div>
+          </div>
+
+          <!-- Short Description -->
+          <div class="form-group">
+            <label for="blogDescription">Short Description (Excerpt) *</label>
+            <div class="form-input-wrapper">
+              <textarea id="blogDescription" rows="3" placeholder="Brief summary of your blog post to attract readers..."></textarea>
+            </div>
+            <p class="form-error"></p>
+          </div>
+
+          <!-- Blog Content -->
+          <div class="form-group">
+            <label for="blogContent">Blog Content *</label>
+            <div class="form-input-wrapper">
+              <textarea id="blogContent" class="content-editor" rows="12" placeholder="Write your full blog story here... Paragraphs separated by line breaks will be rendered cleanly."></textarea>
+            </div>
+            <p class="form-error"></p>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="form-actions">
+            <button type="button" id="draftBtn" class="btn btn-outline btn-lg">
+              <i class="fa-regular fa-bookmark"></i> Save as Draft
+            </button>
+            <button type="button" id="publishBtn" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-paper-plane"></i> Publish Blog
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/blogs.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
